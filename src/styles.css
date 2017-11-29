@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+body{
+  	background-color: #F0F8FF;
+}
+
+/*@keyframes slidedown {
+  from {
+
+    height: 0%;  }
+
+  to {
+    height: 100%;
+
+    background-color:blue;
+  }
+
+
+}
+.slide-down {
+  animation-duration: 3s;
+  animation-name: slidedown;
+
+
+}*/

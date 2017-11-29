@@ -1,0 +1,21 @@
+export const MAPS: string[] = [
+  "ancestral steppe",
+  "primal forest",
+  "sunken hollow",
+  "frozen seaway",
+  "volcanic hollow",
+  "heavens mount",
+  "tower summit",
+  "everwood",
+  "great desert",
+  "sanctuary",
+  "ingle isle",
+  "speartip crag",
+  "great sea",
+  "dunes",
+  "battlequarters",
+  "polar field",
+  "arena",
+  "slayground",
+  "castle schrade"
+];

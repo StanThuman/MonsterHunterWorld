@@ -1,0 +1,46 @@
+<br />
+<div class="row">
+  <div class="col">
+    <h2>{{ weaponTypeTitle | titlecase }}</h2>
+
+  </div>
+</div>
+<br />
+<div class="row">
+
+  <div *ngFor="let weapon of currentWeaponType; let i = index" class="col-lg-2">
+    <a [routerLink]="linkTypes[i]" (click)="setWeapon(weapon)">
+      <card-thumbnail [title]="weapon"></card-thumbnail>
+    </a>
+  </div>
+
+</div>
+<!-- <div class="row">
+  <div class="col-lg-12">
+    <ul class="nav nav-tabs">
+      <li class="nav-item" (click)="onWeaponSelect('blademaster')">
+        <a class="nav-link" [class.active]="'blademaster' == weaponSelected"  [routerLink]="['blademaster']"  ><h3>Blademaster</h3></a>
+      </li>
+
+      <li class="nav-item" >
+        <a class="nav-link" [class.active]="'gunner' == weaponSelected" (click)="onWeaponSelect('gunner')" [routerLink]="['gunner']"><h3>Gunner</h3></a>
+      </li>
+    </ul>
+
+  </div>
+</div> -->
+<!--
+<div class="">
+
+  <br />
+
+  <div class="">
+    <div class="">
+      <div class="">
+
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+  </div>
+</div> -->

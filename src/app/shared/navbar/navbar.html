@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <!-- <a class="navbar-brand" routerLink="/home">MHG</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+        <!-- <li *ngFor="let link of links" class="nav-item active">
+        <a class="nav-link" routerLink="/{{link}}">{{ link | titlecase }} <span class="sr-only">(current)</span></a>
+      </li> -->
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">MHG<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Weapons
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="nav-link" routerLink="/weapons/blademaster">Blademaster</a>
+          <a class="nav-link" routerLink="/weapons/gunner">Gunner</a>
+        </div>
+      </li>
+
+
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/armor">Armor<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/monsters">Monsters<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/maps">Maps<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/skills">Skills<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/items">Items<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/about">About<span class="sr-only">(current)</span></a>
+      </li>
+
+
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <span class="fa fa-search"></span>
+          </button>
+    </form> -->
+
+  </div>
+
+</nav>
+<!--
+`
+  <h3>Top Heroes</h3>
+  <div class="grid grid-pad">
+    <a [routerLink]="['/detail', hero.id]" *ngFor="let hero of heroes" class="col-1-4">
+      <div class="module hero">
+        <h4>{{hero.name}}</h4>
+      </div>
+    </a>
+  </div>`
+
+ -->
