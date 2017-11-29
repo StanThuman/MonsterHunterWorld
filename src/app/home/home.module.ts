@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; //bootstrap module{
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; //bootstrap module
 import { HomeComponent } from './home.component';
 
-//import { HomeRoutingModule } from './home-routing.module';
+
 
 @NgModule({
   declarations: [ //list components that belong to this module

@@ -1,3 +1,4 @@
+/* Component used for each armor set */
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Armor } from '../armor';
 
@@ -38,10 +39,10 @@ export class ArmorListComponent {
   @Input() armorSet: Armor;
 
   ngOnInit(): void {
-    console.log('armorlist');
-    console.log(this)
+    console.log("armorlist ngOnInit");
+
   }
-  //cardtitle1: string;
+
   onRankChanged(): void {
     console.log("child onRank");
   }

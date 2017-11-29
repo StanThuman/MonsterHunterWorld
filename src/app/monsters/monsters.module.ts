@@ -9,6 +9,4 @@ import { MonstersComponent } from './monsters.component';
 
 })
 
-
-
 export class MonstersModule {}

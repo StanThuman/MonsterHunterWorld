@@ -1,3 +1,4 @@
+/*Used for img card component */
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -33,7 +34,7 @@ export class CardThumbnailComponent {
   constructor(private router: Router){}
 
   ngOnInit() :void {
-    
+
     // this.link = this.link.replace(/\s/g, '');
 
     //this.title = "not defined";

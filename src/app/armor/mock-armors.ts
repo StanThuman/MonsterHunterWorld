@@ -1,8 +1,9 @@
 import { Armor } from './armor';
 
+//temporary data used for UI
 export const LowArmorList: Armor[] = [
   {
-    name: 'zinogre',
+    name: 'peco',
     rank: 'low',
     rarity: 3,
     elements: [0, -5, 20, -20, 5], //order: fire, water, thunder, ice, dragon
@@ -20,7 +21,7 @@ export const LowArmorList: Armor[] = [
     skills: ['gloves off', 'crit element', 'ice res']
   },
   {
-    name: "brachydios",
+    name: "gobul",
     rank: 'low',
     rarity: 3,
     elements: [0, -5, 20, -20, 5], //order: fire, water, thunder, ice, dragon
@@ -32,7 +33,7 @@ export const LowArmorList: Armor[] = [
 
 export const HighArmorList: Armor[] = [
   {
-    name: 'zinogre',
+    name: 'baggi',
     rank: 'high',
     rarity: 3,
     elements: [0, -5, 20, -20, 5], //order: fire, water, thunder, ice, dragon
@@ -41,7 +42,7 @@ export const HighArmorList: Armor[] = [
     skills: ['gloves off', 'crit element', 'ice res'],
   },
   {
-    name: "jaggi",
+    name: "duramboros",
     rank: 'high',
     rarity: 3,
     elements: [0, -5, 20, -20, 5], //order: fire, water, thunder, ice, dragon
@@ -50,7 +51,7 @@ export const HighArmorList: Armor[] = [
     skills: ['gloves off', 'crit element', 'ice res']
   },
   {
-    name: "brachydios",
+    name: "rathian",
     rank: 'high',
     rarity: 3,
     elements: [0, -5, 20, -20, 5], //order: fire, water, thunder, ice, dragon
@@ -71,7 +72,7 @@ export const GArmorList: Armor[] = [
     skills: ['gloves off', 'crit element', 'ice res'],
   },
   {
-    name: "jaggi",
+    name: "rathlos",
     rank: 'G',
     rarity: 3,
     elements: [0, -5, 20, -20, 5], //order: fire, water, thunder, ice, dragon

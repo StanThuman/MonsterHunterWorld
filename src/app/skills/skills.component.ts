@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class SkillsComponent {
 
   ngOnInit(): void {
-    console.log("inside skills class");
+    console.log("ngOnInit Skills Component");
   }
 
 

@@ -48,8 +48,10 @@ export class WeaponsComponent {
 
     //changes data if on the same route
     route.params.subscribe(route => {
+
       this.weaponTypeTitle = route.weaponType;
 
+      //temp fix
       if(this.weaponTypeTitle === 'blademaster'){
         this.currentWeaponType = this.bladeMasterTypes;
 
@@ -68,17 +70,15 @@ export class WeaponsComponent {
   }
 
   ngOnInit(): void {
-
-
-    // for(let i = 0; i < this.currentWeaponType.length; i++)
-    //   this.linkTypes.push(this.currentWeaponType[i].replace(/\s/g, ''));
   }
 
+  //changes weapon data loaded
   loadWeaponType(url: string): void{
+
+    //temp fix
     if(url === "/weapons/blademaster"){
       this.currentWeaponType = this.bladeMasterTypes;
       this.weaponTypeTitle = "blademaster";
-
     }
 
     if(url === "/weapons/gunner"){
@@ -88,16 +88,10 @@ export class WeaponsComponent {
 
   }
 
+  //saves weapon selection to service for next page
   setWeapon(weapon: string){
     console.log(weapon);
     this.weaponService.setWeapon(weapon);
     weapon = weapon.replace(/\s/g, '');
   }
-
-
-  // onWeaponSelect(weaponType: string): void {
-  //
-  //   this.weaponSelected = weaponType;
-  // }
-
 }

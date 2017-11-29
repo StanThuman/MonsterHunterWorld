@@ -24,37 +24,16 @@ export class ArmorComponent {
 
   constructor(private route: Router){
     this.armorList = [];
-    // for(let x = 0; x < 15; x++){
-    //   this.armorList.push("G rank Armor Name " + x);
-    // }
   }
   ngOnInit(): void {
     this.currentRank = 2;
-    console.log("router object");
-    console.log(this.route);
-    // console.log("oninit");
-    //
-    // let armorNameArray: string[] = ["low", "high", "G"];
-    //
-    // for(let i = 0; i < 3; i++){
-    //   this.armorList[i] = [];
-    //
-    //
-    //   for(let x = 0; x < 15; x++){
-    //     this.armorList[i].push(
-    //       {
-    //         name: armorNameArray[i] + " Armor Name",
-    //         rank: armorNameArray[i],
-    //
-    //
-    //     });
-    //   }
-    this.changeArmorList(this.currentRank);
-    // }
-  }
+    console.log("ngOnInit amor component");
 
+    this.changeArmorList(this.currentRank);
+
+  }
+  //chages the data for the selected rank
   changeArmorList(newRank: number): void {
-    //console.log(this);
     switch(newRank){
       case 0:
         this.currentArmorList = LowArmorList
@@ -70,6 +49,7 @@ export class ArmorComponent {
     }
   }
 
+  //changes the current Rank when selecting a different one
   changeRankView(newRank: number): void {
 
     if(this.currentRank != newRank){
@@ -77,10 +57,9 @@ export class ArmorComponent {
       this.rankTypes[this.currentRank] = false;
       this.currentRank = newRank;
     }
-
     //decide which data to load
     this.changeArmorList(newRank);
   }
 
 
-}
+} //end class

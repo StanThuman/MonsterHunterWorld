@@ -1,4 +1,6 @@
 <div class="card highlight" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!iscollapsed">
+
+
   <div class="row">
     <div class="col-lg-2">
       <img class="" src="http://via.placeholder.com/150x150"  title="Armor appearance"/>
@@ -8,10 +10,11 @@
 
       <div class="card-body">
         <div class="card-title">
-          <p><b>Armor:</b> {{ armorSet.name }}</p>
+          <p><b>Armor:</b> {{ armorSet.name | titlecase }}</p>
         </div>
         <div class="card-text">
           <b>Defense:</b> {{armorSet.defense}}
+
         </div>
       </div>
 
@@ -22,8 +25,8 @@
       <div class="card-body">
         <div class="card-title">
           <b>Slots:</b> {{ armorSet.slots }}
-
         </div>
+
         <div class="card-text">
           <b>Skills: </b>
           <span *ngFor="let skill of armorSet.skills">{{ skill | titlecase }}</span>
@@ -35,7 +38,6 @@
     <div class="col-lg-3">
 
       <div class="card-body">
-
         <div class="card-title" >
           <table style=" ">
             <tr>
@@ -53,15 +55,14 @@
         </div>
 
         <div class="card-text" style="">
-
         </div>
-
       </div>
 
     </div>
 
-  </div>
+  </div> <!-- end row div -->
 
+  <!--expands inside contents when clicked  -->
   <div class="" [ngbCollapse]="!isCollapsed">
     <hr />
 
