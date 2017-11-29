@@ -1,5 +1,5 @@
 # MonsterHunterWorld
-Learning Angular 4 while making this.
+Learning Angular 4 while making this app.
 
 This app will present information about Monster Hunter World.
   * Weapon Trees
