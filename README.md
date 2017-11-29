@@ -1,18 +1,12 @@
 # MonsterHunterWorld
-Learning Angular 4 while making this app.
+Learning Angular 4 while making this app. Currently working on the Front-end.
 
 This app will present information about Monster Hunter World.
   * Weapon Trees
   * Armors
   * Monsters
   * Items
-  * Skills.
-
-Current State of app:
-  * Not Finished
-  * building UI for front-end
-  
-  
+  * Skills.  
   
 Front-end:
 * Angular 4
