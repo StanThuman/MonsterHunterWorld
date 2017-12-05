@@ -44,44 +44,41 @@ export class WeaponsComponent {
 
   constructor(private router: Router, private route: ActivatedRoute, private weaponService: WeaponService){
     //console.log(route);
-    this.loadWeaponType(this.router.url);
+
 
     //changes data if on the same route
     route.params.subscribe(route => {
 
       this.weaponTypeTitle = route.weaponType;
-
+      this.loadWeaponType(route.weaponType);
       //temp fix
-      if(this.weaponTypeTitle === 'blademaster'){
+      if(this.weaponTypeTitle === 'blademaster')
         this.currentWeaponType = this.bladeMasterTypes;
 
-        for(let i = 0; i < this.currentWeaponType.length; i++)
-          this.linkTypes.push(this.currentWeaponType[i].replace(/\s/g, ''));
-      }
-      else{
+      if(this.weaponTypeTitle === 'gunner')
         this.currentWeaponType = this.gunnerTypes;
-        for(let i = 0; i < this.currentWeaponType.length; i++)
-          this.linkTypes.push(this.currentWeaponType[i].replace(/\s/g, ''));
-      }
 
 
+      for(let i = 0; i < this.currentWeaponType.length; i++)
+        this.linkTypes.push(this.currentWeaponType[i].replace(/\s/g, ''));
 
     })
   }
 
   ngOnInit(): void {
+    //console.log(this.route)
   }
 
   //changes weapon data loaded
-  loadWeaponType(url: string): void{
+  loadWeaponType(urlPath: string): void{
 
     //temp fix
-    if(url === "/weapons/blademaster"){
+    if(urlPath === "/weapons/blademaster"){
       this.currentWeaponType = this.bladeMasterTypes;
       this.weaponTypeTitle = "blademaster";
     }
 
-    if(url === "/weapons/gunner"){
+    if(urlPath === "/weapons/gunner"){
       this.currentWeaponType = this.gunnerTypes;
       this.weaponTypeTitle = "gunner";
     }
@@ -90,7 +87,7 @@ export class WeaponsComponent {
 
   //saves weapon selection to service for next page
   setWeapon(weapon: string){
-    console.log(weapon);
+    //console.log(weapon);
     this.weaponService.setWeapon(weapon);
     weapon = weapon.replace(/\s/g, '');
   }

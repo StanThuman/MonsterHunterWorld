@@ -5,7 +5,7 @@ import { WeaponsComponent } from './weapons.component'
 
 import { WeaponTreeComponent } from './weapon-tree/weapon-tree.component';
 
-
+import { CanActivateWeapon } from './weapons-routing.guard';
 
 const weaponsRoutes: Routes = [
   { path: 'weapons/:weaponType', component : WeaponsComponent,
@@ -16,8 +16,8 @@ const weaponsRoutes: Routes = [
     //   { path: 'gunner', component : WeaponTypeComponent }
     // ]
   },
-  { path: 'weapons/:weapontype/:weapon',
-    pathMatch: 'full', component: WeaponTreeComponent}
+  { path: 'weapons/blademaster/:weapon', component: WeaponTreeComponent, canActivate: [CanActivateWeapon] },
+  { path: 'weapons/gunner/:weapon', component: WeaponTreeComponent }
 ]
 
 
@@ -25,6 +25,7 @@ const weaponsRoutes: Routes = [
   imports: [
     RouterModule.forChild(weaponsRoutes)
   ],
+  providers: [ CanActivateWeapon ],
   exports: [ RouterModule ]
 })
 
