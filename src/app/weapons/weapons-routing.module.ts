@@ -2,22 +2,39 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { WeaponsComponent } from './weapons.component'
-
 import { WeaponTreeComponent } from './weapon-tree/weapon-tree.component';
+import { CanActivateWeaponType, CanActivateWeapon } from './weapons-routing.guard';
+//import { PageNotFoundComponent } from '../shared/page-not-found/page-not-found.component';
 
-import { CanActivateWeapon } from './weapons-routing.guard';
+//import { WeaponService } from '../core/weapon.service';
 
 const weaponsRoutes: Routes = [
-  { path: 'weapons/:weaponType', component : WeaponsComponent,
+  {
+    path: 'weapons/:weaponType',
+    //pathMatch: '',
+    component : WeaponsComponent,
+    canActivate: [ CanActivateWeaponType ]
     //partial views within weapon(reworked it)
-    // children: [
-    //   { path: '', redirectTo: 'blademaster', pathMatch: 'full'},
-    //   { path: 'blademaster', component : WeaponTypeComponent },
-    //   { path: 'gunner', component : WeaponTypeComponent }
-    // ]
+  //   children: [
+  // //    { path: '', redirectTo: 'blademaster', pathMatch: 'full'},
+  //     { path: 'blademaster', component : WeaponTreeComponent },
+  //     { path: 'gunner', component : WeaponTreeComponent }
+  //   ]
   },
-  { path: 'weapons/blademaster/:weapon', component: WeaponTreeComponent, canActivate: [CanActivateWeapon] },
-  { path: 'weapons/gunner/:weapon', component: WeaponTreeComponent }
+
+  {
+    path: 'weapons/:weaponType/:weapon',
+    component: WeaponTreeComponent,
+    canActivate: [CanActivateWeapon]
+  },
+  // {
+  //   path: 'weapons/gunner/:weapon',
+  //   component: WeaponTreeComponent,
+  //   canActivate: [CanActivateWeapon],
+  // },
+//{ path: 'weapons/**', component: PageNotFoundComponent }
+
+
 ]
 
 
@@ -25,7 +42,7 @@ const weaponsRoutes: Routes = [
   imports: [
     RouterModule.forChild(weaponsRoutes)
   ],
-  providers: [ CanActivateWeapon ],
+  providers: [ CanActivateWeaponType, CanActivateWeapon ],
   exports: [ RouterModule ]
 })
 

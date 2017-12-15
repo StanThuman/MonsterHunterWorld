@@ -4,17 +4,31 @@
   <div class="col">
     <h2>{{ weaponTypeTitle | titlecase }}</h2>
   </div>
-
 </div>
-
 <br />
 
 <div class="row">
 
-  <div *ngFor="let weapon of currentWeaponType; let i = index" class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-    <a [routerLink]="linkTypes[i]" (click)="setWeapon(weapon)">
-      <card-thumbnail [title]="weapon"></card-thumbnail>
-    </a>
+  <div class="col-xl-4 col-lg-3">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item ">
+        <a class="nav-link" [class.active]="currentWeaponType==='blademaster'" routerLink="/weapons/blademaster">Blademaster</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="currentWeaponType==='gunner'" routerLink="/weapons/gunner">Gunner</a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<br /><br />
+
+<div class="row">
+
+  <div *ngFor="let weapon of currentWeaponTypeList; let i = index" class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+      <card-thumbnail [title]="weapon" imgsrc="http://via.placeholder.com/150x150" imgwidth="150" imgheight="150"></card-thumbnail>
+
   </div>
 
 </div>

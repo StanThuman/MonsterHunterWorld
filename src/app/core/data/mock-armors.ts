@@ -1,4 +1,4 @@
-import { Armor } from './armor';
+import { Armor } from '../../armor/armor';
 
 //temporary data used for UI
 export const LowArmorList: Armor[] = [

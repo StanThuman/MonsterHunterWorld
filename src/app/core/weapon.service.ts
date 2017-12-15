@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { WEAPONTYPES } from './data/mock-weapons';
+
 @Injectable()
 export class WeaponService{
 
@@ -8,42 +10,55 @@ export class WeaponService{
   weapon: string;
 
   constructor(private router: Router, private route: ActivatedRoute){
-    console.log(route);
-    route.params.subscribe(route => {
-    console.log(route);
-      // this.weaponTypeTitle = route.weaponType;
-      // this.loadWeaponType(route.weaponType);
-      // //temp fix
-      // if(this.weaponTypeTitle === 'blademaster')
-      //   this.currentWeaponType = this.bladeMasterTypes;
-      //
-      // if(this.weaponTypeTitle === 'gunner')
-      //   this.currentWeaponType = this.gunnerTypes;
-      //
-      //
-      // for(let i = 0; i < this.currentWeaponType.length; i++)
-      //   this.linkTypes.push(this.currentWeaponType[i].replace(/\s/g, ''));
 
+    route.params.subscribe(route => {
+      console.log(this);
     })
 
   }
 
+  getAllWeaponTypes(): object {
+    return {
+      blademaster: WEAPONTYPES.blademaster,
+      gunner: WEAPONTYPES.gunner
+    }
+  }
+
+  getWeaponType(weaponType: string): string[] {
+    return WEAPONTYPES[weaponType];
+      //gunner: GUNNERTYPES
+
+  }
+  //
+  // getGunnerWeaponTypes(): string[] {
+  //   return GUNNERTYPES
+  //
+  // }
+
   getWeapon(): string {
 
-      console.log("inside service");
-      // console.log(this.router);
-
-
-
-
-      // console.log(this.router)
       return this.weapon;
   }
 
-  setWeapon(weaponName: string): void {
+
+  getWeaponTypeUrls(weaponType: string): string[] {
+
+    let weaponLinks: string[] = WEAPONTYPES[weaponType];
+
+    // //remove spaces
+    weaponLinks = weaponLinks.map( x => x.replace(/\s/g, ''));
+
+    //console.log(weaponLinks);
+
+    return weaponLinks;
+  }
 
 
-    this.weapon = weaponName;
+
+  setWeapon(weaponType: string, index: number): void {
+
+    this.weapon = WEAPONTYPES[weaponType][index];
+    console.log(this.weapon = WEAPONTYPES[weaponType][index]);
   }
 
 

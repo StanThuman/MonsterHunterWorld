@@ -6,4 +6,26 @@ import { Component } from '@angular/core';
 })
 
 
-export class MonstersComponent {}
+export class MonstersComponent {
+
+  monsters: string[] = [
+    "brachydios",
+    "jaggi",
+    "deviljho",
+    "gore megala",
+    "rathian",
+    "rathalos",
+    "tetsucabra"
+  ];
+
+
+  constructor(){
+
+
+  }
+
+
+
+
+
+}

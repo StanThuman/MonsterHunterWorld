@@ -1,7 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Armor } from './armor';
-import { LowArmorList, HighArmorList, GArmorList } from './mock-armors';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+
+import { ArmorService } from '../core/armor.service';
+
+import { Armor } from './armor';
 
 @Component({
   templateUrl: './armor.component.html',
@@ -15,51 +19,26 @@ import { Router } from '@angular/router';
 
 export class ArmorComponent {
 
-  @Output() onRankChanged = new EventEmitter<void>();
 
-  armorList: Armor[][];
-  currentArmorList: Armor[];
-  rankTypes: boolean[] = [false, false, true];
-  currentRank: number;
 
-  constructor(private route: Router){
-    this.armorList = [];
-  }
-  ngOnInit(): void {
-    this.currentRank = 2;
-    console.log("ngOnInit amor component");
+  armorList: Armor[];
 
-    this.changeArmorList(this.currentRank);
+  currentArmorRank: string;
 
-  }
-  //chages the data for the selected rank
-  changeArmorList(newRank: number): void {
-    switch(newRank){
-      case 0:
-        this.currentArmorList = LowArmorList
-      break;
+  constructor(private route: Router, private router: ActivatedRoute,
+    private armorService: ArmorService ){
+      
+    router.params.subscribe( x => {
+      this.armorList = this.armorService.getArmor(x.armorRank);
+      this.currentArmorRank = this.armorService.getCurrentArmorRank();
+    });
 
-      case 1:
-        this.currentArmorList = HighArmorList;
-      break;
 
-      case 2:
-        this.currentArmorList = GArmorList;
-      break;
-    }
+
   }
 
-  //changes the current Rank when selecting a different one
-  changeRankView(newRank: number): void {
+  ngOnInit(): void { }
 
-    if(this.currentRank != newRank){
-      this.rankTypes[newRank] = true;
-      this.rankTypes[this.currentRank] = false;
-      this.currentRank = newRank;
-    }
-    //decide which data to load
-    this.changeArmorList(newRank);
-  }
 
 
 } //end class

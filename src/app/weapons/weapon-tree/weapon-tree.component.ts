@@ -18,16 +18,15 @@ export class WeaponTreeComponent {
 
     route.params.subscribe(route => {
       //console.log(route);
-
       this.weapon = this.weaponService.getWeapon();
-        console.log(this.weapon);
-      if(this.weapon === undefined )
-        this.weapon = route.weapon;
-
+      //this.weapon = this.weaponService.getWeapon();
+        //console.log("after service call " + this.weapon);
+    //
+    //
     });
   }
 
   ngOnInit(): void {
-    console.log(this.weaponService.getWeapon());
+    //console.log(this.weaponService.getWeapon());
   }
 }

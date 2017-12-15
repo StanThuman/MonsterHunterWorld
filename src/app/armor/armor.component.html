@@ -12,11 +12,11 @@
 <div class="row">
 
   <div class="col-xl-4 col-lg-4 col-md-6" >
-    <nav class="nav nav-pills nav-justified">
-      <div (click)="changeRankView(0)"><span class="nav-link" [class.active]="rankTypes[0]===true">Low Rank</span></div>
-      <div (click)="changeRankView(1)"><span class="nav-link" [class.active]="rankTypes[1]===true">High Rank</span></div>
-      <div (click)="changeRankView(2)"><span class="nav-link" [class.active]="rankTypes[2]===true">G Rank</span></div>
-    </nav>
+    <ul class="nav nav-pills">
+      <li><a class="nav-link" [class.active]="currentArmorRank==='lowrank'" routerLink="/armor/lowrank">Low Rank</a></li>
+      <li><a class="nav-link" [class.active]="currentArmorRank==='highrank'" routerLink="/armor/highrank">High Rank</a></li>
+      <li><a class="nav-link" [class.active]="currentArmorRank==='grank'" routerLink="/armor/grank">G Rank</a></li>
+    </ul>
   </div>
 
   <div class="offset-xl-5 col-xl-3 offset-lg-4 col-lg-4 offset-md-1 col-md-5">
@@ -38,13 +38,15 @@
 
   </div>
 </div><!-- End row   -->
+
+
 <br />
 
 <div class="row">
 
   <div class="col-xl-12">
 
-    <div class="" *ngFor="let armor of currentArmorList; let x = index">
+    <div class="" *ngFor="let armor of armorList; let x = index">
       <div class="row">
         <div class="col-lg-12">
           <armor-card [armorSet]="armor"></armor-card>

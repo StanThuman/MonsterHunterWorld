@@ -6,20 +6,23 @@ import { ArmorComponent } from './armor/armor.component';
 import { MonstersComponent } from './monsters/monsters.component';
 import { MapsComponent } from './maps/maps.component';
 import { SkillsComponent } from './skills/skills.component';
-//import { PageNotFoundcomponent } from './not'
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home',  component: HomeComponent },
 
-  { path: 'armor', component: ArmorComponent },
+  //{ path: 'armor', component: ArmorComponent },
   { path: 'monsters', component: MonstersComponent },
-  { path: 'maps', component: MapsComponent },
-  { path: 'skills', component: SkillsComponent }
+  //{ path: 'maps', component: MapsComponent },
+
+  { path: 'skills', component: SkillsComponent },
+
   //{ path: '', component: WeaponsComponent, outlet: 'weapontype' }
   // { path: 'detail/:id', component: HeroDetailComponent },
   // { path: 'heroes', component: HeroesComponent },
-  //{ path: '**', component PageNotFoundComponent }
+  { path: 'error', component: PageNotFoundComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 // { enableTracing: true}
 @NgModule({

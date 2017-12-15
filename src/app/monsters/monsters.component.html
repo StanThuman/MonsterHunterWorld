@@ -1,2 +1,8 @@
 <br />
 <h2>Monster</h2>
+<br />
+<div class="row">
+  <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4" *ngFor="let monster of monsters">
+    <card-thumbnail [title]="monster" imgsrc="http://via.placeholder.com/150x150" imgheight="150" imgwidth="150"></card-thumbnail>
+  </div>
+</div>

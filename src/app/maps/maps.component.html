@@ -7,8 +7,13 @@
 <br />
 <div class="row">
 
-  <div *ngFor="let map of maps" class="col-xl-2 col-lg-3 col-sm-6">
-    <card-thumbnail [title]="map"></card-thumbnail>    
-  </div>
+  <!-- <div *ngFor="let map of maps" class="col-xl-2 col-lg-3 col-sm-6">
+    <card-thumbnail [title]="map" imgsrc="http://via.placeholder.com/145x82"></card-thumbnail>
+  </div> -->
+  <div *ngFor="let map of maps" class="col-xl-2 col-lg-3  col-md-4 col-sm-6">
 
+      <card-thumbnail [title]="map.name" [imgsrc]="map.src" imgheight="145" imgwidth="150"></card-thumbnail>
+
+  </div>
+  <!-- <img src="assets/map-thumbnails/ancestral_steppe" /> -->
 </div>

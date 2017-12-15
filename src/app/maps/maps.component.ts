@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MAPS } from './mock-maps';
+import { MapService } from '../core/map.service';
 
 
 @Component({
@@ -11,13 +11,18 @@ import { MAPS } from './mock-maps';
     .text-padding{
       padding: 0.75em;
     }
+    a, a:link, a:visited, a:hover {
+      text-decoration: none;
+      color: black;
+    }
     `]
 })
 
 export class MapsComponent {
-  maps: string[];
+  maps: object[];
 
+  constructor(private mapService: MapService){}
   ngOnInit() :void {
-    this.maps = MAPS;
+    this.maps = this.mapService.getMaps();
   }
 }
