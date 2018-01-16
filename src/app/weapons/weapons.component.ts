@@ -33,7 +33,7 @@ export class WeaponsComponent {
     private route: ActivatedRoute,
     private weaponService: WeaponService){
 
-    //console.log(weaponService.getAllWeaponTypes());
+    console.log("inside weapon component");
 
     //changes data if on the same route
     //reloading the same component for same route wont reload

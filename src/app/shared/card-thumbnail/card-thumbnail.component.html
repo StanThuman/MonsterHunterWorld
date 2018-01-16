@@ -1,6 +1,7 @@
 <a [routerLink]="link">
   <div  class="card map-margins highlight">
-    <img class="card-img-top" [src]="imgsrc" [height]="imgheight" [width]="imgwidth" />
+    <img class="card-img-top img-responsive" [src]="imgsrc" />
+    <!-- [height]="imgheight" [width]="imgwidth" /> -->
     <div class="card-body text-padding">
       <div class="card-text">
         <span>{{ title | titlecase }}</span>

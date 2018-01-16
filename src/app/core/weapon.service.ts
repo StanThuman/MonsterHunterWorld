@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 import { Router, ActivatedRoute } from '@angular/router';
-
 import { WEAPONTYPES } from './data/mock-weapons';
 
 @Injectable()
@@ -9,7 +10,8 @@ export class WeaponService{
   //holds selected weapon for next page
   weapon: string;
 
-  constructor(private router: Router, private route: ActivatedRoute){
+  constructor(private router: Router, private route: ActivatedRoute,
+  private http: HttpClient){//, private messageService: MessageService){
 
     route.params.subscribe(route => {
       console.log(this);
@@ -18,6 +20,7 @@ export class WeaponService{
   }
 
   getAllWeaponTypes(): object {
+
     return {
       blademaster: WEAPONTYPES.blademaster,
       gunner: WEAPONTYPES.gunner
@@ -25,10 +28,22 @@ export class WeaponService{
   }
 
   getWeaponType(weaponType: string): string[] {
+      console.log("api call");
+      this.testApiCall().subscribe( data => {
+        console.log(data);
+      });
     return WEAPONTYPES[weaponType];
       //gunner: GUNNERTYPES
 
   }
+
+  testApiCall(): Observable<string[]> {
+  let uri = "http://localhost:11111/api/values";
+
+  return this.http.get<string[]>(uri);
+
+
+}
   //
   // getGunnerWeaponTypes(): string[] {
   //   return GUNNERTYPES

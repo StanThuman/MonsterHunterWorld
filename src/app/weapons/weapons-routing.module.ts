@@ -10,6 +10,13 @@ import { CanActivateWeaponType, CanActivateWeapon } from './weapons-routing.guar
 
 const weaponsRoutes: Routes = [
   {
+    path: 'weapons',
+    pathMatch: 'full',
+    redirectTo: 'weapons/blademaster',
+
+  },
+  {
+
     path: 'weapons/:weaponType',
     //pathMatch: '',
     component : WeaponsComponent,

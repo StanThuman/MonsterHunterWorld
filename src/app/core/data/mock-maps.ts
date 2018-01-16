@@ -1,4 +1,4 @@
-export const MAPS: object[] = [
+export const MAPS = [
   {
     name: "ancestral steppe",
     src: "assets/map-thumbnails/ancestral_steppe.jpg"

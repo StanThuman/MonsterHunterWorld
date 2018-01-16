@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'home',  component: HomeComponent },
 
   //{ path: 'armor', component: ArmorComponent },
-  { path: 'monsters', component: MonstersComponent },
+  //{ path: 'monsters', component: MonstersComponent },
   //{ path: 'maps', component: MapsComponent },
 
   { path: 'skills', component: SkillsComponent },

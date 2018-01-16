@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { WeaponService } from './weapon.service';
 import { ArmorService } from './armor.service';
-import { MapService } from './map.service';
+import { MapsService } from './maps.service';
+import { UtilityRoutingService } from './utility-routing.service';
 
 
 
 //holds all singeton services
 @NgModule({
   declarations: [],
-  providers: [ WeaponService, ArmorService, MapService ],
+  providers: [ WeaponService, ArmorService, MapsService, UtilityRoutingService ],
   imports: [],
   exports: []
 })

@@ -1,16 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { MapService } from '../core/map.service';
+import { MapsService } from '../core/maps.service';
 
 
 @Component({
   templateUrl: './maps.component.html',
   styles: [`
-    .map-margins{
-      margin-bottom:20px;
-    }
-    .text-padding{
-      padding: 0.75em;
-    }
+
     a, a:link, a:visited, a:hover {
       text-decoration: none;
       color: black;
@@ -21,8 +16,8 @@ import { MapService } from '../core/map.service';
 export class MapsComponent {
   maps: object[];
 
-  constructor(private mapService: MapService){}
+  constructor(private mapService: MapsService){}
   ngOnInit() :void {
-    this.maps = this.mapService.getMaps();
+    this.maps = this.mapService.getMapThumbnails();
   }
 }
